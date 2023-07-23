@@ -51,6 +51,7 @@ class _JoinerPageState extends State<JoinerPage> {
     });
   }
 
+  
   void joinGroup() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user != null) {
@@ -58,6 +59,8 @@ class _JoinerPageState extends State<JoinerPage> {
       }
     });
   }
+
+  
 
   Future<GeoPoint> getPointFromAddress(String address) async {
     if (address == "Your Location") {
@@ -69,6 +72,7 @@ class _JoinerPageState extends State<JoinerPage> {
         await addressSuggestion(address, limitInformation: 2);
     return suggestionsInfo[0].point!;
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +107,7 @@ class _JoinerPageState extends State<JoinerPage> {
                 icon: Icon(
                   Icons.person,
                   size: 64,
-                  color: Colors.brown,
+                  color: Colors.red,
                 ),
               ),
               roadColor: Colors.yellowAccent,
@@ -179,7 +183,7 @@ class _JoinerPageState extends State<JoinerPage> {
                               icon: const Icon(Icons.done)),
                           filled: true,
                           constraints: const BoxConstraints(maxHeight: 60),
-                          fillColor: Colors.grey[100],
+                          fillColor: Colors.grey[300],
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(100),
                               borderSide: BorderSide.none),
